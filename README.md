@@ -1,67 +1,78 @@
-# 🚀 Cisco Packet Tracer - Maquettes de Routage Dynamique :
 
+🚀 Cisco Packet Tracer - Dynamic Routing Labs
 
-Ce dépôt contient trois architectures réseau distinctes réalisées sur **Cisco Packet Tracer**, illustrant la mise en œuvre des principaux protocoles de routage dynamique : **RIPv2**, **OSPF** et **EIGRP**.
-
+This repository features three distinct network architectures built in Cisco Packet Tracer, demonstrating the implementation of the primary dynamic routing protocols: RIPv2, OSPF, and EIGRP.
+📋 Project Overview
 ![Capture d'écran du projet](image.png)
 
+The objective is to establish Full Mesh connectivity between multiple Local Area Networks (LANs) through an infrastructure of routers interconnected via serial links (using /30 subnets).
+🛠️ Technologies Used
 
-## 📋 Présentation du Projet
-L'objectif est de démontrer la connectivité complète (Full Mesh) entre plusieurs réseaux locaux (LAN) à travers une infrastructure de routeurs interconnectés par des liaisons série (/30).
+    Software: Cisco Packet Tracer
 
-### 🛠️ Technologies Utilisées
-- **Logiciel** : Cisco Packet Tracer
-- **Protocoles** : RIPv2, OSPF, EIGRP
-- **Adressage** : IPv4 (VLSM)
-- **Équipements** : Routeurs 2911, Switches 2960, PCs
+    Protocols: RIPv2, OSPF, EIGRP
 
----
+    Addressing: IPv4 (VLSM - Variable Length Subnet Masking)
 
-## 🏗️ Les 3 Maquettes
+    Hardware: 2911 Routers, 2960 Switches, End Devices (PCs)
 
-### 1. Maquette RIP (Routing Information Protocol)
-*Le protocole à vecteur de distance, simple et efficace pour les petites topologies.*
-- **Version** : 2 (Supporte le VLSM)
-- **Configuration Clé** : `no auto-summary` pour éviter la résumérisation automatique.
-- **Vérification** : `show ip route rip`
+🏗️ The 3 Lab Architectures
+1. RIPv2 Lab (Routing Information Protocol)
 
-### 2. Maquette OSPF (Open Shortest Path First)
-*Le standard de l'industrie basé sur l'état des liens.*
-- **Algorithme** : Dijkstra (SPF)
-- **Hiérarchie** : Utilisation de l'**Area 0** (Backbone).
-- **Configuration Clé** : Wildcard masks précis (`0.0.0.3`) pour les liens série.
-- **Vérification** : `show ip ospf neighbor`
+A distance-vector protocol, ideal for simplicity in smaller topologies.
 
-### 3. Maquette EIGRP (Enhanced Interior Gateway Routing Protocol)
-*Le protocole hybride propriétaire Cisco à convergence ultra-rapide.*
-- **AS (Autonomous System)** : 10
-- **Algorithme** : DUAL (Diffusing Update Algorithm).
-- **Configuration Clé** : Utilisation de masques génériques pour une précision optimale.
-- **Vérification** : `show ip eigrp neighbors`
+    Version: 2 (Supports VLSM)
 
----
+    Key Configuration: no auto-summary to prevent unwanted route summarization.
 
-## 🚀 Installation et Test
+    Verification Command: show ip route rip
 
-1. Téléchargez le fichier `.pkt` correspondant au protocole souhaité.
-2. Ouvrez le fichier dans **Cisco Packet Tracer**.
-3. Pour tester la connectivité :
-   - Utilisez l'outil **Ping** entre les PCs des extrémités.
-   - Utilisez la commande `traceroute` pour visualiser le chemin emprunté par les paquets.
-4. Pour inspecter le routage :
-   - Accédez au CLI d'un routeur et tapez `show ip route`.
+2. OSPF Lab (Open Shortest Path First)
 
----
+The industry-standard link-state protocol used in large-scale enterprise networks.
 
-## 🔍 Comparaison des Protocoles
+    Algorithm: Dijkstra (Shortest Path First)
 
-| Protocole | Type | Distance Administrative | Convergence |
-| :--- | :--- | :--- | :--- |
-| **RIPv2** | Vecteur de distance | 120 | Lente |
-| **OSPF** | État des liens | 110 | Rapide |
-| **EIGRP** | Hybride | 90 | Très rapide |
+    Hierarchy: Implementation of Area 0 (Backbone).
 
----
+    Key Configuration: Precise Wildcard masks (e.g., 0.0.0.3) for point-to-point serial links.
 
-## ✍️ Auteur
-**Moad** - Étudiant en Cybersécurité et Technologie Web.
+    Verification Command: show ip ospf neighbor
+
+3. EIGRP Lab (Enhanced Interior Gateway Routing Protocol)
+
+A Cisco-proprietary hybrid protocol known for ultra-fast convergence.
+
+    AS (Autonomous System): 10
+
+    Algorithm: DUAL (Diffusing Update Algorithm).
+
+    Key Configuration: Use of wildcard masks for optimal subnet precision.
+
+    Verification Command: show ip eigrp neighbors
+
+🚀 Installation and Testing
+
+    Download the .pkt file corresponding to the protocol you wish to study.
+
+    Open the file in Cisco Packet Tracer.
+
+    To test connectivity:
+
+        Use the Ping tool between PCs at different network extremities.
+
+        Use the traceroute command to visualize the path taken by packets.
+
+    To inspect routing tables:
+
+        Access the Router CLI and type show ip route.
+
+🔍 Protocol Comparison
+Protocol	Type	Administrative Distance	Convergence
+RIPv2	Distance Vector	120	Slow
+OSPF	Link-State	110	Fast
+EIGRP	Hybrid	90	Very Fast
+✍️ Author
+
+Moad - Cybersecurity and Web Technology Student.
+
