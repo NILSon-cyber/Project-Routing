@@ -3,6 +3,9 @@
 
 Ce dépôt contient trois architectures réseau distinctes réalisées sur **Cisco Packet Tracer**, illustrant la mise en œuvre des principaux protocoles de routage dynamique : **RIPv2**, **OSPF** et **EIGRP**.
 
+![Capture d'écran du projet](image.png)
+
+
 ## 📋 Présentation du Projet
 L'objectif est de démontrer la connectivité complète (Full Mesh) entre plusieurs réseaux locaux (LAN) à travers une infrastructure de routeurs interconnectés par des liaisons série (/30).
 
